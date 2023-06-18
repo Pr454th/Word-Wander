@@ -1,4 +1,4 @@
-# WordWander Blog Website
+# 🎣WordWander Blog Website🎣
 
 WordWander is a full-stack blog website built with Next.js, enabling users to create, share, view, and delete their own posts. It includes features like Google login for easy authentication, a dark/light mode toggle for personalized viewing, and a user-friendly interface.
 
