@@ -4,9 +4,12 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 const getData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `https://word-wander-five.vercel.app/api/posts/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!res.ok) return notFound();
   return res.json();
 };

@@ -14,7 +14,7 @@ export default function Dashboard() {
   const [errMsg, setErrMsg] = useState("");
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, error, isLoading } = useSWR(
-    `http://localhost:3000/api/posts?username=${session?.data?.user?.name}`,
+    `https://word-wander-five.vercel.app/api/posts?username=${session?.data?.user?.name}`,
     fetcher
   );
 
@@ -31,7 +31,7 @@ export default function Dashboard() {
       desc: e.target.desc.value,
       username: session?.data?.user?.name,
     };
-    const res = await fetch("http://localhost:3000/api/posts", {
+    const res = await fetch("https://word-wander-five.vercel.app/api/posts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -47,7 +47,7 @@ export default function Dashboard() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3000/api/posts/${id}`, {
+    await fetch(`https://word-wander-five.vercel.app/api/posts/${id}`, {
       method: "DELETE",
     });
     mutate();

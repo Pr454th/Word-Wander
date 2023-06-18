@@ -52,7 +52,7 @@ export default function Login() {
             className={styles.button}
             onClick={() =>
               signIn("google", {
-                callbackUrl: "http://localhost:3000/dashboard",
+                callbackUrl: "https://word-wander-five.vercel.app/dashboard",
               })
             }
           >
