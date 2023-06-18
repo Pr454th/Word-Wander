@@ -57,7 +57,12 @@ export default async function Blog() {
           <Link href={`/blog/${item._id}`} key={item._id}>
             <div className={styles.item}>
               <div className={styles.imgContainer}>
-                <Image src={item.img} fill={true} className={styles.img} />
+                <Image
+                  src={item.img}
+                  fill={true}
+                  className={styles.img}
+                  alt="bg"
+                />
               </div>
               <div className={styles.itemDetail}>
                 <div className={styles.textTitle}>{item.title}</div>

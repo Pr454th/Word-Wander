@@ -12,18 +12,21 @@ export default function Footer() {
           width={22}
           height={22}
           className={styles.icon}
+          alt="bg"
         />
         <Image
           src="/images/twitter.png"
           width={24}
           height={24}
           className={styles.icon}
+          alt="bg"
         />
         <Image
           src="/images/instagram.png"
           width={24}
           height={24}
           className={styles.icon}
+          alt="bg"
         />
       </div>
     </div>

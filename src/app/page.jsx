@@ -16,6 +16,7 @@ export default function Home() {
             src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=600"
             fill={true}
             className={styles.image}
+            alt="bg"
           />
         </div>
       </div>

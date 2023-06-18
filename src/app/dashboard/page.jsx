@@ -76,6 +76,7 @@ export default function Dashboard() {
                       src={item.img}
                       fill={true}
                       className={styles.image}
+                      alt="bg"
                     />
                   </div>
                   <div className={styles.postInfo}>

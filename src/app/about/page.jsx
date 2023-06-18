@@ -10,7 +10,12 @@ export default function About() {
         <h1>Discover Our Vision</h1>
       </div>
       <div className={styles.imgContainer}>
-        <Image src="/images/2.jpg" fill={true} className={styles.img} />
+        <Image
+          src="/images/2.jpg"
+          fill={true}
+          className={styles.img}
+          alt="bg"
+        />
         <h1 className={styles.imgTitle}>Nature</h1>
         <h2 className={styles.imgDesc}>
           Immerse yourself in the breathtaking beauty of nature's tapestry, as

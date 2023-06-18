@@ -15,6 +15,7 @@ export default function Portfolio() {
               width={300}
               height={300}
               className={styles.img}
+              alt="bg"
             />
           </div>
           <div className={styles.itemTitle}>Applications</div>
@@ -26,6 +27,7 @@ export default function Portfolio() {
               width={300}
               height={300}
               className={styles.img}
+              alt="bg"
             />
           </div>
           <div className={styles.itemTitle}>Illustrations</div>
@@ -37,6 +39,7 @@ export default function Portfolio() {
               width={300}
               height={300}
               className={styles.img}
+              alt="bg"
             />
           </div>
           <div className={styles.itemTitle}>Websites</div>

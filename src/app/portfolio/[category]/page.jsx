@@ -12,9 +12,14 @@ export default function Category({ params }) {
       <div className={styles.title}>{title}</div>
       <div className={styles.items}>
         {categories[category].map((item) => (
-          <div className={styles.item}>
+          <div className={styles.item} key={item.title}>
             <div className={styles.imgContainer}>
-              <Image src={item.img} fill={true} className={styles.img} />
+              <Image
+                src={item.img}
+                fill={true}
+                className={styles.img}
+                alt="bg"
+              />
             </div>
             <div className={styles.itemDetail}>
               <div className={styles.textTitle}>{item.title}</div>
