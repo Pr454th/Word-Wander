@@ -33,14 +33,14 @@ const blogs = [
 
 export default async function Blog() {
   async function getData() {
-    // const res = await fetch("http://localhost:3000/api/posts", {
-    //   cache: "no-store",
-    // });
-    // if (!res.ok) {
-    //   console.log(res);
-    //   throw new Error(res.status);
-    // }
-    // return res.json();
+    const res = await fetch("https://word-wander-five.vercel.app/api/posts", {
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      console.log(res);
+      throw new Error(res.status);
+    }
+    return res.json();
   }
   const title = "Blogs";
   const data = await getData();
