@@ -34,7 +34,7 @@ const blogs = [
 export default async function Blog() {
   async function getData() {
     const res = await fetch("http://127.0.0.1:3000/api/posts", {
-      // next: { revalidate: 10 },
+      next: { revalidate: 10 },
     });
     if (!res.ok) {
       console.log(res);
