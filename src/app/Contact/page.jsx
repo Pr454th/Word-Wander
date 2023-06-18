@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <>
       <div className={styles.pageTitle}>
-        <h1>Let's Keep in touch</h1>
+        <h1>Let&apos;s Keep in touch</h1>
       </div>
       <div className={styles.container}>
         <div className={styles.item}>

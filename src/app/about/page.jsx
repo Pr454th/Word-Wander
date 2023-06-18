@@ -18,8 +18,8 @@ export default function About() {
         />
         <h1 className={styles.imgTitle}>Nature</h1>
         <h2 className={styles.imgDesc}>
-          Immerse yourself in the breathtaking beauty of nature's tapestry, as
-          we showcase stunning pictures of trees that will transport you to
+          Immerse yourself in the breathtaking beauty of nature&apos;s tapestry,
+          as we showcase stunning pictures of trees that will transport you to
           serene and captivating landscapes.
         </h2>
       </div>
