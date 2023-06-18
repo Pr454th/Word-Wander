@@ -11,9 +11,6 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
 
     try {
       const res = await fetch("/api/auth/register", {

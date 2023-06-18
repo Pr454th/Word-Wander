@@ -21,7 +21,6 @@ export default function Dashboard() {
   if (session.status === "loading") return <div>Loading...</div>;
 
   if (session.status === "unauthenticated") router?.push("/dashboard/login");
-  console.log(data);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

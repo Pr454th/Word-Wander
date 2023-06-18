@@ -11,9 +11,6 @@ import Image from "next/image";
 export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.email.value);
-    console.log(e.target.message.value);
 
     const res = await fetch("/api/contact", {
       method: "POST",

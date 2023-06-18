@@ -11,8 +11,6 @@ export default function Login() {
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
 
     signIn("credentials", {
       email: e.target.email.value,
