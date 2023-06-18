@@ -3,10 +3,10 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Contact Page",
-  description: "Created by KP.",
-};
+// export const metadata = {
+//   title: "Contact Page",
+//   description: "Created by KP.",
+// };
 
 export default function Contact() {
   const handleSubmit = async (e) => {
