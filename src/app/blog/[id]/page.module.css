@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  color: rgb(138, 138, 138);
+}
+
+.text {
+  font-size: 20px;
+  width: 600px;
+  margin: 20px;
+}
+
+.imgContainer {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 5px;
+  border: 2px solid rgb(138, 138, 138);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.field {
+  color: rgb(44, 140, 108);
+}
+
+.value {
+  float: right;
+}
+
+.item2 {
+  justify-content: center;
+}

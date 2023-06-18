@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.send {
+  width: 30%;
+  height: 30px;
+  background-color: rgb(73, 144, 170);
+  color: inherit;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input {
+  height: 50px;
+  border-color: inherit;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+
+.textarea {
+  height: 150px;
+  border-color: inherit;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+
+.imgContainer {
+  height: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.img {
+  border-radius: 5px;
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  animation: move 3s infinite ease alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.pageTitle {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  color: rgb(138, 138, 138);
+}

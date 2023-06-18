@@ -1,0 +1,12 @@
+.container {
+  color: inherit;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 10px;
+  cursor: pointer;
+}

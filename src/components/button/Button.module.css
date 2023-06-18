@@ -1,0 +1,9 @@
+.works {
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: inherit;
+  background-color: rgb(64, 145, 154);
+  width: auto;
+}
