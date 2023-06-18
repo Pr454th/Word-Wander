@@ -54,7 +54,7 @@ export default function Login() {
             className={styles.button}
             onClick={() =>
               signIn("google", {
-                callbackUrl: "http://127.0.0.1:3000/dashboard",
+                callbackUrl: "http://localhost:3000/dashboard",
               })
             }
           >

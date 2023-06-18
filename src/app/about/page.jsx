@@ -51,7 +51,7 @@ export default function About() {
             readers.
           </p>
           <br />
-          <Button text={"Contact"} href={"/"} />
+          <Button text={"Contact"} href={"/Contact"} />
         </div>
       </div>
     </div>
