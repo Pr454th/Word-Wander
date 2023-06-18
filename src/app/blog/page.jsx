@@ -31,21 +31,20 @@ const blogs = [
   },
 ];
 
-async function getData() {
-  const res = await fetch("http://127.0.0.1:3000/api/posts", {
-    next: { revalidate: 10 },
-  });
-  if (!res.ok) {
-    console.log(res);
-    throw new Error(res.status);
-  }
-  console.log(res);
-  return res.json();
-}
-
 export default async function Blog() {
+  async function getData() {
+    const res = await fetch("http://127.0.0.1:3000/api/posts", {
+      // next: { revalidate: 10 },
+    });
+    if (!res.ok) {
+      console.log(res);
+      throw new Error(res.status);
+    }
+    console.log(res);
+    return res.json();
+  }
   const title = "Blogs";
-  const data = await getData();
+  const data = (await getData()) || null;
   console.log(data);
   return (
     <div className={styles.container}>
