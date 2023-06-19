@@ -11,6 +11,8 @@ export default function Dashboard() {
   const session = useSession();
   const router = useRouter();
   const [err, setErr] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [id, setId] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, error, isLoading } = useSWR(
@@ -53,6 +55,43 @@ export default function Dashboard() {
     mutate();
   };
 
+  const Edit = async (item) => {
+    document.querySelector("input[name=title]").value = item.title;
+    document.querySelector("input[name=img]").value = item.img;
+    document.querySelector("input[name=content]").value = item.content;
+    document.querySelector("textarea[name=desc]").value = item.desc;
+    setId(item._id);
+    setEdit(true);
+  };
+
+  const handleEdit = async (e) => {
+    e.preventDefault();
+    const body = {
+      title: document.querySelector("input[name=title]").value,
+      img: document.querySelector("input[name=img]").value,
+      content: document.querySelector("input[name=content]").value,
+      desc: document.querySelector("textarea[name=desc]").value,
+      username: session?.data?.user?.name,
+    };
+    console.log(body);
+    const res = await fetch(
+      `https://word-wander-five.vercel.app/api/posts/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }
+    );
+    res.status === 201
+      ? ((document.querySelector("input[name=title]").value = ""),
+        (document.querySelector("input[name=img]").value = ""),
+        (document.querySelector("input[name=content]").value = ""),
+        (document.querySelector("textarea[name=desc]").value = ""),
+        setEdit(false),
+        mutate())
+      : setErrMsg("Something went wrong");
+  };
+
   if (session.status === "authenticated") {
     return (
       <div className={styles.container}>
@@ -86,12 +125,20 @@ export default function Dashboard() {
                     >
                       {item.desc}
                     </p>
-                    <span
-                      className={styles.postBtn}
-                      onClick={() => handleDelete(item._id)}
-                    >
-                      Remove
-                    </span>
+                    <div className={styles.controls}>
+                      <span
+                        className={styles.editBtn}
+                        onClick={() => Edit(item)}
+                      >
+                        Edit
+                      </span>
+                      <span
+                        className={styles.postBtn}
+                        onClick={() => handleDelete(item._id)}
+                      >
+                        Remove
+                      </span>
+                    </div>
                   </div>
                 </div>
               ))
@@ -100,7 +147,7 @@ export default function Dashboard() {
             )}
           </div>
           <div className={styles.item}>
-            <h2>Create Post</h2>
+            {edit ? <h2>Edit Post</h2> : <h2>Create Post</h2>}
             <form className={styles.form} onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -110,7 +157,7 @@ export default function Dashboard() {
               />
               <input
                 type="text"
-                placeholder="Image link"
+                placeholder="Image link (only from pexels.com)"
                 name="img"
                 className={styles.input}
               />
@@ -126,9 +173,19 @@ export default function Dashboard() {
                 name="desc"
                 className={styles.textarea}
               />
-              <button type="submit" className={styles.send}>
-                Post
-              </button>
+              {edit ? (
+                <button
+                  type="submit"
+                  className={styles.send}
+                  onClick={handleEdit}
+                >
+                  Edit
+                </button>
+              ) : (
+                <button type="submit" className={styles.send}>
+                  Post
+                </button>
+              )}
             </form>
             {err ? <div className={styles.err}>{errMsg}</div> : null}
           </div>

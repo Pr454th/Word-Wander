@@ -28,3 +28,18 @@ export const DELETE = async (req, { params }) => {
     return new NextResponse("error", { status: 500 });
   }
 };
+
+export const PUT = async (request, { params }) => {
+  try {
+    await connectDB();
+    const { id } = params;
+    const { username, title, img, content, desc } = await request.json();
+    const updatePost = { username, title, img, content, desc };
+    const post = await Post.findByIdAndUpdate({ _id: id }, updatePost, {
+      new: true,
+    });
+    return new NextResponse(JSON.stringify(post), { status: 201 });
+  } catch (error) {
+    return new NextResponse("error", { status: 500 });
+  }
+};

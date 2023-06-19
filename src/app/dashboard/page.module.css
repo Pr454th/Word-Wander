@@ -113,6 +113,13 @@
   cursor: pointer;
 }
 
+.editBtn {
+  align-items: center;
+  justify-content: center;
+  color: rgb(32, 164, 52);
+  cursor: pointer;
+}
+
 .postTitle {
   font-size: 22px;
   font-weight: 600;
@@ -142,4 +149,11 @@
 .noPost {
   color: rgb(148, 148, 148);
   align-self: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
